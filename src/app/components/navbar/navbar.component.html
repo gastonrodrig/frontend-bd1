@@ -1,52 +1,21 @@
-<nav class="navbar navbar-expand-lg bg-color">
-  <div class="container-fluid">
-    <a class="navbar-brand font-logo" routerLink="/">Elsa Val Crochets</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ng-container *ngIf="!isLoggedIn; else loggedIn">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" routerLink="/catalogo">Productos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" routerLink="/nosotros">Nosotros</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link" routerLinkActive="active" routerLink="/login">Iniciar sesión</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" routerLink="/signup">Registrar</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
-          </li>
-        </ul>
-      </ng-container>
-
-      <ng-template #loggedIn>
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" routerLink="/catalogo">Productos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" routerLink="/nosotros">Nosotros</a>
-          </li>
-          <li class="nav-item">
-            <button class="nav-link" routerLinkActive="active" (click)="logout()">Cerrar Sesión
-            </button>
-          </li>
-          <li class="nav-item">
-            <button class="nav-link" routerLinkActive="active" (click)="navigateUser()">
-              {{ user?.username || 'Usuario' }}
-            </button>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
-          </li>
-        </ul>
-      </ng-template>
-    </div>
+<nav class="bg-dark">
+  <div class="d-flex justify-content-center">
+    <i class="fa-solid fa-database fs-3 me-2" style="color: #ffffff;"></i>
+    <h3 routerLink="/" class="text-white text-center fw-light">Proyecto BD1</h3>
   </div>
+    <div class="mt-4">
+      <ul class="navbar-nav ms-auto mb-2">
+        <li class="nav-item mx-2">
+          <a routerLinkActive="active" routerLink="/vuelo" class="nav-link text-decoration-none">Gestionar Vuelo</a>
+        </li>
+        <hr class="w-100 my-1" style="border-color: rgb(188, 188, 188); border-width: 1px;">
+        <li class="nav-item mx-2">
+          <a routerLinkActive="active" routerLink="/pasajero" class="nav-link text-decoration-none">Gestionar Pasajero</a>
+        </li>
+        <hr class="w-100 my-1" style="border-color: rgb(188, 188, 188); border-width: 1px;">
+        <li class="nav-item mx-2">
+          <a routerLinkActive="active" routerLink="/reserva" class="nav-link text-decoration-none">Gestionar Reserva</a>
+        </li>
+      </ul>
+    </div>
 </nav>

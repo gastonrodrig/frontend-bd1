@@ -1,0 +1,53 @@
+<div class="m-5">
+    <h2 class="text-center fw-normal my-4">Lista de Vuelos</h2>
+    <div class="d-flex justify-content-between">
+        <div class="filter-container">
+            <div class="search-bar-container">
+                <div class="d-flex justify-content-start">
+                    <input 
+                        [(ngModel)]="searchTerm"
+                        type="text" 
+                        class="search-bar-input me-2" 
+                        placeholder="Buscar por destino" 
+                    />
+                    <i class="fas fa-search search-icon fs-5 mt-2"></i>
+                </div>
+            </div>
+        </div>
+        <button 
+            mat-raised-button 
+            class="fw-normal" 
+            style="background-color: #ffc935;"
+            routerLink="/registrarvuelo"
+        >
+            Registrar Vuelo
+        </button>
+    </div>
+    <table class="table table-sm text-center mt-4 table-hover shadow">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Destino</th>
+            <th>Fecha</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i = index; let e of vuelosFiltrados()" mat-subheader>
+                <td>{{ e.id_vuelo }}</td>
+                <td>{{ e.destino }}</td>
+                <td>{{ e.fecha }}</td>
+                <td>
+                    <div class="d-flex justify-content-center mt-1">
+                        <div class="editar-icono me-3">
+                            <i [routerLink]="'/actualizarvuelo/'+e.id_vuelo" class="fas fa-edit"></i>
+                        </div>
+                        <div class="eliminar-icono" (click)="eliminarVuelo(e.id_vuelo)">
+                            <i class="fa-solid fa-trash"></i>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

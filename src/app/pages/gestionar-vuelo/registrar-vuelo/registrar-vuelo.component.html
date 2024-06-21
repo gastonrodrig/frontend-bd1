@@ -1,0 +1,55 @@
+<div class="m-5">
+    <h2 class="text-center fw-normal my-4">Registre un Vuelo</h2>
+    <div class="bg-white shadow">
+        <div class="m-5">
+            <div class="py-5">
+                <form (ngSubmit)="guardarInformacion()">
+                    <div class="row">
+                        <div class="d-flex justify-content-center">
+                            <mat-form-field class="w-50">
+                                <mat-label>Destino del vuelo</mat-label>
+                                <input 
+                                    [(ngModel)]="vueloData.destino" 
+                                    [ngModelOptions]="{standalone: true}"
+                                    type="text" 
+                                    placeholder="Digite el destino del vuelo"
+                                    matInput
+                                >
+                            </mat-form-field>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <mat-form-field class="w-50">
+                                <mat-label>Fecha del vuelo</mat-label>
+                                <input 
+                                    [(ngModel)]="vueloData.fecha"
+                                    [ngModelOptions]="{standalone: true}"
+                                    matInput 
+                                    [min]="minDate" 
+                                    [matDatepicker]="picker"
+                                >
+                                <mat-hint>MM/DD/YYYY</mat-hint>
+                                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <button 
+                            mat-raised-button class="fw-normal me-4" 
+                            style="background-color: #ffc935;"
+                            (click)="volverAVuelos()"
+                        >
+                            Volver
+                        </button>
+                        <button 
+                            mat-raised-button class="fw-normal" 
+                            style="background-color: #ffc935;"
+                        >
+                            Agregar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
