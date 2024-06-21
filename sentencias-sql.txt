@@ -1,0 +1,75 @@
+CREATE DATABASE elsaval
+
+USE elsaval
+
+**CATEGORIAS**
+
+INSERT INTO categorias
+(categoria_id, datecreated, descripcion, nombre, status)
+VALUES
+(1,NOW(),'descripcion cartera','Cartera','1'),
+(2,NOW(),'descripcion mochila','Mochila','1'),
+(3,NOW(),'descripcion llavero','Llavero','1');
+
+**PRODUCTOS**
+
+INSERT INTO productos (producto_id, sku, datecreated, descripcion, imagen, nombre_producto, precio, status, stock, categoria_id)
+VALUES 
+(1, 'TID0740K08914H00', NOW() ,'Nuestro modelo Pretty destaca por la hermosa construcción de su asa, la cual se conecta al cuerpo de la cartera a través de aros dorados. Está confeccionada en cuero grabado de tacto suave. Sus dimensiones son perfectas par el uso diario.', 'https://estaticos-cdn.prensaiberica.es/clip/d03997b3-052a-47de-9cb6-f5f3b7f7e6c1_woman-libre-1200_default_0.webp', 'CARTERA PRETTY', 62.00, 1, 50, 1),
+(2, 'TID0723K6ST20400', NOW() ,'Nuestro bolso hobo está elaborado en fino cuero 100% italiano, de textura muy confortable. Puedes llevarlo al hombro o cruzado con su correa textil, que le da un look exótico y cautivante.', 'https://estaticos-cdn.prensaiberica.es/clip/a8358a35-c366-4381-9308-051489798cef_woman-libre-1200_default_0.webp', 'BOLSO AESTHETIC', 48.00, 1, 0, 2),
+(3, 'TID0718K7TS20400', NOW() ,'Nuestro modelo Holy Leather Mini destaca por su exquisita combinación de materiales en el asa y por supuesto, por su refinado cuero elaborado en Italia, donde el arte de la curtición aún se realiza con devoción.', 'https://estaticos-cdn.prensaiberica.es/clip/040609d1-3925-4f91-8b70-27eb52a53b8c_woman-libre-1200_default_0.webp', 'CARTERA HOLY LEATHER', 55.00, 1, 20000, 3),
+(4, 'TID0727K83W62D00', NOW() ,'Una silueta perfecta en cuero liso, con solo tocarla transmite suavidad y el legado del arte del cuero italiano. Una cartera de mano con un diseño clásico, pero con un giro extra: una cartera monocromática que eleva su esencia.', 'https://estaticos-cdn.prensaiberica.es/clip/f8fa7462-d4e6-4798-ad72-6955a4c62f7b_woman-libre-1200_default_0.webp', 'CARTERA FINESSA', 102.00, 1, 50, 1),
+(5, 'TID0717K6TS20400', NOW() ,'Nuestro modelo Santa Piel destaca por su exquisita combinación de materiales en el asa y por supuesto, por su refinado cuero elaborado en Italia, donde el arte de la curtición aún se realiza con devoción.', 'https://estaticos-cdn.prensaiberica.es/clip/79da2fd0-eda9-4e86-85e1-0db73629f557_woman-libre-1200_default_0.webp', 'CARTERA SANTA PIEL', 135.00, 1, 50, 2),
+(6, 'TID0729K19710H00', NOW() ,'Si eres amante de lo práctico y con carácter, te presentamos nuestra Croco Embossed Bag, una cartera al hombro lista para tener el protagonismo de tu estilo casual gracias a su llamativo grabado en fino cuero italiano.', 'https://estaticos-cdn.prensaiberica.es/clip/df9d8e06-953a-4b85-8c3e-a0bbee47d0b3_woman-libre-1200_default_0.webp', 'CARTERA CROCO', 68.00, 1, 50, 3),
+(7, 'TID0727KC0362D00', NOW() ,'Una silueta perfecta en cuero liso, con solo tocarla transmite suavidad y el legado del arte del cuero italiano. Una cartera de mano con un diseño clásico, pero con un giro extra: una cartera monocromática que eleva su esencia.', 'https://estaticos-cdn.prensaiberica.es/clip/a74fef54-087c-4146-85c1-1bdc42387b51_woman-libre-1200_default_0.webp', 'CARTERA FINESSA', 42.00, 1, 50, 1),
+(8, 'TID0778F3ON62D00', NOW() ,'Cartera elaborada en cuero liso con detalles de flores en diferentes colores grabados a láser. Diseño moderno y sofisticado con aplicaciones metálicas, de tamaño pequeño, pero a la vez muy práctico y espacioso, accesorio que puede combinarse fácil.', 'https://estaticos-cdn.prensaiberica.es/clip/ef7bf4b7-49e3-4fa2-9393-0951cd221000_woman-libre-1200_default_0.webp', 'CARTERA EVELYN', 49.00, 1, 50, 2),
+(9, 'TID0755K8UAP2021', NOW() ,'Un nuevo modelo de cartera de mano, con un diseño moderno y funcional. Elaborada en cuero italiano de alta calidad, esta cartera es perfecta para el uso diario o para ocasiones especiales.', 'https://estaticos-cdn.prensaiberica.es/clip/4fe9e5dd-ca7a-41fc-ab13-491ee665cb2a_woman-libre-1200_default_0.webp', 'NUEVA CARTERA URBAN', 39.00, 1, 50, 1),
+(10, 'TID0756K8UAP2022', NOW() ,'Un bolso elegante y versátil, ideal para complementar cualquier atuendo. Confeccionado en cuero genuino, este bolso ofrece estilo y funcionalidad en uno.', 'https://estaticos-cdn.prensaiberica.es/clip/1b0ded8a-787e-4c2d-8494-0589d132a2b3_woman-libre-1200_default_0.webp', 'NUEVO BOLSO LUXE', 139.00, 1, 50, 2),
+(11, 'TID0757K8UAP2023', NOW() ,'Una mochila moderna y resistente, diseñada para acompañarte en todas tus aventuras. Fabricada con materiales duraderos, esta mochila ofrece comodidad y estilo.', 'https://estaticos-cdn.prensaiberica.es/clip/59d26c9a-d958-49e4-82f6-3db2f731b0bf_woman-libre-1200_default_0.webp', 'NUEVA MOCHILA ADVENTURE', 179.00, 1, 50, 3),
+(12, 'TID0758K8UAP2024', NOW() ,'Un elegante portafolio, perfecto para llevar tus documentos y dispositivos de forma segura y organizada. Fabricado en cuero premium, este portafolio es una combinación de estilo y funcionalidad.', 'https://estaticos-cdn.prensaiberica.es/clip/178432d3-9bdb-4dc4-8e86-a7fc8b2fcac2_woman-libre-1200_default_0.webp', 'NUEVO PORTAFOLIO EXECUTIVE', 169.00, 1, 50, 2),
+(13, 'TID0759K8UAP2025', NOW() ,'Una cartera de mano elegante y sofisticada, perfecta para complementar tu look de noche. Elaborada en cuero de alta calidad, esta cartera es un accesorio imprescindible para cualquier ocasión.', 'https://estaticos-cdn.prensaiberica.es/clip/9082e522-69cb-4c12-a34c-9fec32977fa4_woman-libre-1200_default_0.webp', 'NUEVA CARTERA ELEGANCE', 159.00, 1, 50, 1),
+(14, 'TID0760K8UAP2026', NOW() ,'Un bolso tote versátil y elegante, perfecto para llevar tus cosas de manera organizada y con estilo. Confeccionado en cuero genuino, este bolso es ideal para el uso diario o para ocasiones especiales.', 'https://estaticos-cdn.prensaiberica.es/clip/c87bb71d-dd2b-4c26-a7e9-f121b27bc637_woman-libre-1200_default_0.webp', 'NUEVO BOLSO TOTE CHIC', 179.00, 1, 50, 2),
+(15, 'TID0761K8UAP2027', NOW() ,'Una cartera cruzada moderna y funcional, perfecta para tus aventuras urbanas. Fabricada en materiales resistentes al agua, esta cartera te ofrece estilo y comodidad en cualquier situación.', 'https://estaticos-cdn.prensaiberica.es/clip/9733372f-bc62-4284-a789-c098ac059483_woman-libre-1200_default_0.webp', 'NUEVA CARTERA URBAN CROSS', 129.00, 1, 50, 3),
+(16, 'TID0762K8UAP2028', NOW() ,'Una cartera de mano sofisticada y elegante, perfecta para tus eventos más exclusivos. Elaborada en cuero italiano de alta calidad, esta cartera te hará destacar en cualquier ocasión.', 'https://estaticos-cdn.prensaiberica.es/clip/82553076-5fb1-4584-8e4d-d05978d063e4_woman-libre-1200_default_0.webp', 'NUEVA CARTERA LUXURY', 119.00, 1, 50, 1),
+
+**CATALOGO**
+
+INSERT INTO catalogo (catalogo_id, precio_oferta, categoria_id, producto_id)
+VALUES
+(1, NULL, 1, 1),
+(2, NULL, 2, 2),
+(3, NULL, 3, 3),
+(4, NULL, 1, 4),
+(5, NULL, 2, 5),
+(6, NULL, 3, 6),
+(7, NULL, 1, 7),
+(8, NULL, 2, 8),
+(9, NULL, 1, 9),
+(10, NULL, 2, 10),
+(11, NULL, 3, 11),
+(12, NULL, 2, 12),
+(13, NULL, 1, 13),
+(14, NULL, 2, 14),
+(15, NULL, 3, 15),
+(16, NULL, 1, 16);
+
+**INVENTARIO**
+
+INSERT INTO inventario (inventario_id, cantidad, datecreated, tipo, producto_id) 
+VALUES
+(1, 50, NOW(), NULL, 1),
+(2, 50, NOW(), NULL, 2),
+(3, 50, NOW(), NULL, 3),
+(4, 50, NOW(), NULL, 4),
+(5, 50, NOW(), NULL, 5),
+(6, 50, NOW(), NULL, 6),
+(7, 50, NOW(), NULL, 7),
+(8, 50, NOW(), NULL, 8),
+(9, 50, NOW(), NULL, 9),
+(10, 50, NOW(), NULL, 10),
+(11, 50, NOW(), NULL, 11),
+(12, 50, NOW(), NULL, 12),
+(13, 50, NOW(), NULL, 13),
+(14, 50, NOW(), NULL, 14),
+(15, 50, NOW(), NULL, 15),
+(16, 50, NOW(), NULL, 16);

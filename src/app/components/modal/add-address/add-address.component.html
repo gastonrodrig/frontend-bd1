@@ -1,0 +1,72 @@
+<div mat-dialog-title>
+    <div class="d-flex">
+        <div class="mx-2 fs-2">
+            <i class="fa-solid fa-location-dot"></i>
+        </div>
+        <h2 class="fw-light">Ingresa tu dirección para ver las opciones de 
+        <strong class="fw-normal">entrega</strong> y 
+        <strong class="fw-normal">retiro</strong>.</h2>
+    </div>
+</div>
+
+<mat-dialog-content class="mat-typography">
+    <form (ngSubmit)="guardarInformacion()">
+        <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Seleccione Departamento</mat-label>
+            <mat-select 
+                name="department" 
+                [(ngModel)]="addressData.department.departmentId"
+                (ngModelChange)="filtrarProvincias()"
+            >
+                <mat-option *ngFor="let e of departments" [value]="e.departmentId">
+                    {{e.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Seleccione Provincia</mat-label>
+            <mat-select 
+                name="province" 
+                [(ngModel)]="addressData.province.provinceId"
+                (ngModelChange)="filtrarDistritos()"
+            >
+                <mat-option *ngFor="let e of provinciasFiltradas" [value]="e.provinceId">
+                    {{ e.name }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Seleccione Distrito</mat-label>
+            <mat-select 
+                name="district" 
+                [(ngModel)]="addressData.district.districtId"
+            >
+                <mat-option *ngFor="let e of distritosFiltrados" [value]="e.districtId">
+                    {{ e.name }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Direccion</mat-label>
+            <input
+                name="name"
+                [(ngModel)] = "addressData.name"
+                type="text"
+                placeholder="Digite su direccion"
+                matInput
+            >
+        </mat-form-field>
+
+        <div class="d-flex justify-content-end">
+            <div class="p-2">
+                <button mat-button style="background-color: #333 ; color: white;">Agregar</button>
+            </div>
+            <div class="p-2">
+                <button mat-button mat-dialog-close>Cancelar</button>
+            </div>
+        </div>
+    </form>
+</mat-dialog-content>

@@ -1,0 +1,19 @@
+.bg-color {
+  background-color: #F9E1DF;
+}
+
+.font-logo {
+  color: #8C5962;
+  font-weight: 300;
+}
+
+.nav-link {
+  color: #8C5962;
+  font-size: 15px; 
+  font-weight: 400;
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+  color: #410f18;
+  font-weight: bold;
+}
