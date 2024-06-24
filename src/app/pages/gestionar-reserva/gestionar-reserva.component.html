@@ -1,1 +1,57 @@
-<p>gestionar-reserva works!</p>
+<div class="m-5">
+    <h2 class="text-center fw-normal my-4">Lista de Reservas</h2>
+    <div class="d-flex justify-content-between">
+        <div class="filter-container">
+            <div class="search-bar-container">
+                <div class="d-flex justify-content-start">
+                    <input 
+                        [(ngModel)]="searchTerm"
+                        type="text" 
+                        class="search-bar-input me-2" 
+                        placeholder="Buscar por fecha" 
+                    />
+                    <i class="fas fa-search search-icon fs-5 mt-2"></i>
+                </div>
+            </div>
+        </div>
+        <button 
+            mat-raised-button 
+            class="fw-normal" 
+            style="background-color: #ffc935;"
+            routerLink="/registrar-reserva"
+        >
+            Registrar Reserva
+        </button>
+    </div>
+    <table class="table table-sm text-center mt-4 table-hover shadow">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Fecha</th>
+            <th>Importe</th>
+            <th>Destino</th>
+            <th>Pasajero</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i = index; let e of reservasFiltradas()" mat-subheader>
+                <td>{{ e.id_reserva }}</td>
+                <td>{{ e.fecha_reserva }}</td>
+                <td>S/. {{ e.importe }}</td>
+                <td>{{ e.vuelo.destino }}</td>
+                <td>{{ e.pasajero.nombre }}</td>
+                <td>
+                    <div class="d-flex justify-content-center mt-1">
+                        <div class="editar-icono me-3">
+                            <i [routerLink]="'/actualizar-reserva/'+e.id_reserva" class="fas fa-edit"></i>
+                        </div>
+                        <div class="eliminar-icono" (click)="eliminarReserva(e.id_reserva)">
+                            <i class="fa-solid fa-trash"></i>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

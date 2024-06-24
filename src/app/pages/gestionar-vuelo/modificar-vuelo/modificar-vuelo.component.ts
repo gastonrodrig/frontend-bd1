@@ -41,14 +41,23 @@ export class ModificarVueloComponent {
   }
 
   actualizarDatos(){
-    if (!this.vuelo.destino || !this.vuelo.fecha) {
-      this.snack.open('El destino y fecha del vuelo son requeridos', '', {
+    if (this.vuelo.destino === '' || this.vuelo.destino == null) {
+      this.snack.open('El destino es requerido', '', {
         duration: 3000
       });
       return;
     }
   
-    this.vueloService.actualizarVuelo(this.vuelo).subscribe(
+    if (this.vuelo.fecha === '' || this.vuelo.fecha == null) {
+      this.snack.open('La fecha es requerida', '', {
+        duration: 3000
+      });
+      return;
+    }
+
+    console.log(this.vuelo)
+  
+    this.vueloService.actualizarVuelo(this.vueloId,this.vuelo).subscribe(
       (data) => {
         Swal.fire('Vuelo actualizado', 'El vuelo ha sido actualizado con éxito', 'success').then(
           (e)=> {

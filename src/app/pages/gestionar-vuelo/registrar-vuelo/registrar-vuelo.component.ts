@@ -29,7 +29,6 @@ export class RegistrarVueloComponent {
   }
 
   guardarInformacion() {
-    console.log(this.vueloData)
     if (this.vueloData.destino === '' || this.vueloData.destino == null) {
       this.snack.open('El destino es requerido', '', {
         duration: 3000

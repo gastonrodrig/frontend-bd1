@@ -1,0 +1,81 @@
+<div class="m-5">
+    <h2 class="text-center fw-normal my-4">Registre un Vuelo</h2>
+    <div class="bg-white shadow">
+        <div class="m-5">
+            <div class="py-5">
+                <form (ngSubmit)="guardarInformacion()">
+                    <div class="row">
+                        <div class="d-flex justify-content-center">
+                            <mat-form-field class="w-50 mb-2">
+                                <mat-label>Fecha de la reserva</mat-label>
+                                <input 
+                                    [(ngModel)]="reservaData.fecha_reserva"
+                                    [ngModelOptions]="{standalone: true}"
+                                    matInput 
+                                    [min]="minDate" 
+                                    [matDatepicker]="picker"
+                                >
+                                <mat-hint>MM/DD/YYYY</mat-hint>
+                                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <mat-form-field class="w-50">
+                                <mat-label>Importe de la reserva</mat-label>
+                                <input 
+                                    [(ngModel)]="reservaData.importe" 
+                                    [ngModelOptions]="{standalone: true}"
+                                    type="number" 
+                                    placeholder="Digite el destino del vuelo"
+                                    matInput
+                                >
+                            </mat-form-field>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <mat-form-field appearance="fill" class="w-50">
+                                <mat-label>Seleccione el destino</mat-label>
+                                <mat-select 
+                                    [(ngModel)]="reservaData.id_vuelo"
+                                    [ngModelOptions]="{standalone: true}"
+                                >
+                                    <mat-option *ngFor="let e of vuelos" [value]="e.id_vuelo">
+                                        {{ e.destino }}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <mat-form-field appearance="fill" class="w-50">
+                                <mat-label>Seleccione el destino</mat-label>
+                                <mat-select 
+                                    [(ngModel)]="reservaData.id_pasajero"
+                                    [ngModelOptions]="{standalone: true}"
+                                >
+                                    <mat-option *ngFor="let e of pasajeros" [value]="e.id_pasajero">
+                                        {{ e.nombre }}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <button 
+                            mat-raised-button class="fw-normal me-4" 
+                            style="background-color: #ffc935;"
+                            (click)="volverAReservas()"
+                        >
+                            Volver
+                        </button>
+                        <button 
+                            mat-raised-button class="fw-normal" 
+                            style="background-color: #ffc935;"
+                        >
+                            Agregar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

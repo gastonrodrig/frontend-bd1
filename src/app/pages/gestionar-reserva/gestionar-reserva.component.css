@@ -1,0 +1,51 @@
+table {
+    width: 100%;
+}
+
+th {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 0;
+}
+
+td {
+    font-size: 14px;
+}
+
+.search-bar-input {
+    padding: 8px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.eliminar-icono {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.eliminar-icono i {
+    transition: color 0.3s, transform 0.3s;
+    color: black;
+}
+  
+.eliminar-icono:hover i {
+    color: red;
+    transform: scale(1.2);
+}
+
+.editar-icono {
+    display: inline-block;
+    cursor: pointer;
+}
+  
+.editar-icono i {
+    color: black;
+    transition: color 0.3s, transform 0.3s;
+}
+  
+.editar-icono:hover i {
+    color: #00adef;
+    transform: scale(1.2);
+}

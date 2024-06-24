@@ -18,7 +18,7 @@
             mat-raised-button 
             class="fw-normal" 
             style="background-color: #ffc935;"
-            routerLink="/registrarvuelo"
+            routerLink="/registrar-vuelo"
         >
             Registrar Vuelo
         </button>
@@ -40,7 +40,7 @@
                 <td>
                     <div class="d-flex justify-content-center mt-1">
                         <div class="editar-icono me-3">
-                            <i [routerLink]="'/actualizarvuelo/'+e.id_vuelo" class="fas fa-edit"></i>
+                            <i [routerLink]="'/actualizar-vuelo/'+e.id_vuelo" class="fas fa-edit"></i>
                         </div>
                         <div class="eliminar-icono" (click)="eliminarVuelo(e.id_vuelo)">
                             <i class="fa-solid fa-trash"></i>

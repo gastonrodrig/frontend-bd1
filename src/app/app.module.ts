@@ -28,6 +28,10 @@ import { GestionarPasajeroComponent } from './pages/gestionar-pasajero/gestionar
 import { GestionarReservaComponent } from './pages/gestionar-reserva/gestionar-reserva.component';
 import { RegistrarVueloComponent } from './pages/gestionar-vuelo/registrar-vuelo/registrar-vuelo.component';
 import { ModificarVueloComponent } from './pages/gestionar-vuelo/modificar-vuelo/modificar-vuelo.component';
+import { ModificarReservaComponent } from './pages/gestionar-reserva/modificar-reserva/modificar-reserva.component';
+import { RegistrarReservaComponent } from './pages/gestionar-reserva/registrar-reserva/registrar-reserva.component';
+import { ModificarPasajeroComponent } from './pages/gestionar-pasajero/modificar-pasajero/modificar-pasajero.component';
+import { RegistrarPasajeroComponent } from './pages/gestionar-pasajero/registrar-pasajero/registrar-pasajero.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +41,11 @@ import { ModificarVueloComponent } from './pages/gestionar-vuelo/modificar-vuelo
     GestionarPasajeroComponent,
     GestionarReservaComponent,
     RegistrarVueloComponent,
-    ModificarVueloComponent
+    ModificarVueloComponent,
+    ModificarReservaComponent,
+    RegistrarReservaComponent,
+    ModificarPasajeroComponent,
+    RegistrarPasajeroComponent
   ],
   imports: [
     BrowserModule,

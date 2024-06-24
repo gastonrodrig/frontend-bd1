@@ -20,7 +20,7 @@ export class VueloService {
   public obtenerVuelo(vueloId:any){
     return this.http.get(`${baseUrl}/vuelo/${vueloId}`);
   }
-  public actualizarVuelo(vuelo:any){
-    return this.http.put(`${baseUrl}/vuelo/`, vuelo);
+  public actualizarVuelo(vueloId: any, vuelo:any){
+    return this.http.put(`${baseUrl}/vuelo/${vueloId}`, vuelo);
   }
 }

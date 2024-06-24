@@ -1,1 +1,55 @@
-<p>gestionar-pasajero works!</p>
+<div class="m-5">
+    <h2 class="text-center fw-normal my-4">Lista de Pasajeros</h2>
+    <div class="d-flex justify-content-between">
+        <div class="filter-container">
+            <div class="search-bar-container">
+                <div class="d-flex justify-content-start">
+                    <input 
+                        [(ngModel)]="searchTerm"
+                        type="text" 
+                        class="search-bar-input me-2" 
+                        placeholder="Buscar por pasaporte" 
+                    />
+                    <i class="fas fa-search search-icon fs-5 mt-2"></i>
+                </div>
+            </div>
+        </div>
+        <button 
+            mat-raised-button 
+            class="fw-normal" 
+            style="background-color: #ffc935;"
+            routerLink="/registrar-pasajero"
+        >
+            Registrar Pasajero
+        </button>
+    </div>
+    <table class="table table-sm text-center mt-4 table-hover shadow">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Pasaporte</th>
+            <th>Fecha de nacimiento</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i = index; let e of pasajerosFiltrados()" mat-subheader>
+                <td>{{ e.id_pasajero }}</td>
+                <td>{{ e.nombre }}</td>
+                <td>{{ e.pasaporte }}</td>
+                <td>{{ e.fecha_nacimiento }}</td>
+                <td>
+                    <div class="d-flex justify-content-center mt-1">
+                        <div class="editar-icono me-3">
+                            <i [routerLink]="'/actualizar-pasajero/'+e.id_pasajero" class="fas fa-edit"></i>
+                        </div>
+                        <div class="eliminar-icono" (click)="eliminarPasajero(e.id_pasajero)">
+                            <i class="fa-solid fa-trash"></i>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
